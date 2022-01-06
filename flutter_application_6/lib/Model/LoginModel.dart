@@ -1,3 +1,5 @@
+// model files dhow have empty check (if in case api returns nill)
+
 import 'dart:convert';
 import 'package:flutter/material.dart';
 
@@ -28,13 +30,13 @@ class LoginModel with ChangeNotifier {
   Company company;
 
   factory LoginModel.fromJson(Map<String, dynamic> json) => LoginModel(
-        id: json["id"],
-        name: json["name"],
-        username: json["username"],
-        email: json["email"],
+        id: json["id"] ?? '',
+        name: json["name"] ?? '',
+        username: json["username"] ?? '',
+        email: json["email"] ?? '',
         address: Address.fromJson(json["address"]),
-        phone: json["phone"],
-        website: json["website"],
+        phone: json["phone"] ?? '',
+        website: json["website"] ?? '',
         company: Company.fromJson(json["company"]),
       );
 
@@ -66,9 +68,9 @@ class Address {
   Geo geo;
 
   factory Address.fromJson(Map<String, dynamic> json) => Address(
-        street: json["street"],
-        suite: json["suite"],
-        city: json["city"],
+        street: json["street"] ?? '',
+        suite: json["suite"] ?? '',
+        city: json["city"] ?? '',
         zipcode: json["zipcode"],
         geo: Geo.fromJson(json["geo"]),
       );
@@ -92,8 +94,8 @@ class Geo {
   String lng;
 
   factory Geo.fromJson(Map<String, dynamic> json) => Geo(
-        lat: json["lat"],
-        lng: json["lng"],
+        lat: json["lat"] ?? '',
+        lng: json["lng"] ?? '',
       );
 
   Map<String, dynamic> toJson() => {
@@ -114,9 +116,9 @@ class Company {
   String bs;
 
   factory Company.fromJson(Map<String, dynamic> json) => Company(
-        name: json["name"],
-        catchPhrase: json["catchPhrase"],
-        bs: json["bs"],
+        name: json["name"] ?? '',
+        catchPhrase: json["catchPhrase"] ?? '',
+        bs: json["bs"] ?? '',
       );
 
   Map<String, dynamic> toJson() => {

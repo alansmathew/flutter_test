@@ -226,20 +226,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-// Future<MyModel> someAsyncFunctionToGetMyModel() async {
-//   await Future.delayed(Duration(seconds: 3));
-//   return MyModel(someValue: 'new data');
-// }
-
-// class MyModel with ChangeNotifier {
-//   String someValue = "";
-//   // MyModel({required this.someValue});
-//   Future<void> doSomething() async {
-//     print("hello world");
-//     await Future.delayed(Duration(seconds: 2));
-//     someValue = 'Goodbye';
-//     print(someValue);
-//     notifyListeners();
-//   }
-// }
