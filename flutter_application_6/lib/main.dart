@@ -34,8 +34,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<ViewModel>(
-      create: (context) => ViewModel(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<ViewModel>(create: (context) => ViewModel()),
+      ],
       child: Scaffold(
         resizeToAvoidBottomInset: true,
         body: SingleChildScrollView(
